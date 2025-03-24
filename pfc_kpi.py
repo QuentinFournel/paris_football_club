@@ -276,7 +276,7 @@ def create_metrics(df):
     metrics = ['Timing', 'Force physique', 'Intelligence tactique', 'Technique 1', 'Technique 2', 'Technique 3', 'Explosivité', 'Prise de risque', 'Précision', 'Sang-froid']
 
     for metric in metrics:
-        df[metric] = (df[metric].rank(pct=True, method='max') * 100).fillna(0)
+        df[metric] = (df[metric].rank(pct=True, method='average') * 100).fillna(0)
 
     return df
 
